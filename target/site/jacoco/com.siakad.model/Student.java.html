@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Student.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">siakad-testing</a> &gt; <a href="index.source.html" class="el_package">com.siakad.model</a> &gt; <span class="el_source">Student.java</span></div><h1>Student.java</h1><pre class="source lang-java linenums">package com.siakad.model;
+
+public class Student {
+    private String studentId;
+    private String name;
+    private String email;
+    private String major;
+    private int semester;
+    private double gpa; // IPK
+    private String academicStatus; // ACTIVE, PROBATION, SUSPENDED
+<span class="fc" id="L11">    public Student() {</span>
+<span class="fc" id="L12">    }</span>
+    public Student(String studentId, String name, String email, String major,
+<span class="fc" id="L14">                   int semester, double gpa, String academicStatus) {</span>
+<span class="fc" id="L15">        this.studentId = studentId;</span>
+<span class="fc" id="L16">        this.name = name;</span>
+<span class="fc" id="L17">        this.email = email;</span>
+<span class="fc" id="L18">        this.major = major;</span>
+<span class="fc" id="L19">        this.semester = semester;</span>
+<span class="fc" id="L20">        this.gpa = gpa;</span>
+<span class="fc" id="L21">        this.academicStatus = academicStatus;</span>
+<span class="fc" id="L22">    }</span>
+    // Getters and Setters
+    public String getStudentId() {
+<span class="fc" id="L25">        return studentId;</span>
+    }
+    public void setStudentId(String studentId) {
+<span class="fc" id="L28">        this.studentId = studentId;</span>
+<span class="fc" id="L29">    }</span>
+    public String getName() {
+<span class="fc" id="L31">        return name;</span>
+    }
+    public void setName(String name) {
+<span class="fc" id="L34">        this.name = name;</span>
+<span class="fc" id="L35">    }</span>
+    public String getEmail() {
+<span class="fc" id="L37">        return email;</span>
+    }
+    public void setEmail(String email) {
+<span class="fc" id="L40">        this.email = email;</span>
+<span class="fc" id="L41">    }</span>
+    public String getMajor() {
+<span class="fc" id="L43">        return major;</span>
+    }
+    public void setMajor(String major) {
+<span class="fc" id="L46">        this.major = major;</span>
+<span class="fc" id="L47">    }</span>
+    public int getSemester() {
+<span class="fc" id="L49">        return semester;</span>
+    }
+    public void setSemester(int semester) {
+<span class="fc" id="L52">        this.semester = semester;</span>
+<span class="fc" id="L53">    }</span>
+    public double getGpa() {
+<span class="fc" id="L55">        return gpa;</span>
+    }
+    public void setGpa(double gpa) {
+<span class="fc" id="L58">        this.gpa = gpa;</span>
+<span class="fc" id="L59">    }</span>
+    public String getAcademicStatus() {
+<span class="fc" id="L61">        return academicStatus;</span>
+    }
+    public void setAcademicStatus(String academicStatus) {
+<span class="fc" id="L64">        this.academicStatus = academicStatus;</span>
+<span class="fc" id="L65">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

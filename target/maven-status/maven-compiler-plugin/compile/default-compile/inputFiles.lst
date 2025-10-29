@@ -1,0 +1,15 @@
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\exception\CourseFullException.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\exception\CourseNotFoundException.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\exception\EnrollmentException.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\exception\PrerequisiteNotMetException.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\exception\StudentNotFoundException.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\Main.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\model\Course.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\model\CourseGrade.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\model\Enrollment.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\model\Student.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\repository\CourseRepository.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\repository\StudentRepository.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\service\EnrollmentService.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\service\GradeCalculator.java
+C:\kuliah\tugas\sem 5\pengujian perangkat lunak\230209003_Amanda Bunga Lestari_UTS\siakad-testing\src\main\java\com\siakad\service\NotificationService.java

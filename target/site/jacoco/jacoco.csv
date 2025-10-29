@@ -1,0 +1,12 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+siakad-testing,com.siakad.model,Enrollment,0,56,0,0,0,24,0,12,0,12
+siakad-testing,com.siakad.model,Student,0,76,0,0,0,32,0,16,0,16
+siakad-testing,com.siakad.model,Course,5,92,1,1,1,36,1,17,0,17
+siakad-testing,com.siakad.model,CourseGrade,0,36,0,0,0,16,0,8,0,8
+siakad-testing,com.siakad.service,EnrollmentService,0,185,0,18,0,46,0,14,0,5
+siakad-testing,com.siakad.service,GradeCalculator,0,167,0,42,0,33,0,25,0,4
+siakad-testing,com.siakad.exception,EnrollmentException,0,9,0,0,0,4,0,2,0,2
+siakad-testing,com.siakad.exception,StudentNotFoundException,0,9,0,0,0,4,0,2,0,2
+siakad-testing,com.siakad.exception,CourseNotFoundException,0,9,0,0,0,4,0,2,0,2
+siakad-testing,com.siakad.exception,PrerequisiteNotMetException,0,9,0,0,0,4,0,2,0,2
+siakad-testing,com.siakad.exception,CourseFullException,0,9,0,0,0,4,0,2,0,2

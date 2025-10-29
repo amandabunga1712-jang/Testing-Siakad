@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GradeCalculator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">siakad-testing</a> &gt; <a href="index.source.html" class="el_package">com.siakad.service</a> &gt; <span class="el_source">GradeCalculator.java</span></div><h1>GradeCalculator.java</h1><pre class="source lang-java linenums">package com.siakad.service;
+
+import com.siakad.model.CourseGrade;
+import java.util.List;
+
+/**
+ * Class untuk perhitungan IPK dan status akademik mahasiswa
+ * Class ini akan diuji dengan UNIT TESTING BIASA (tanpa mock/stub)
+ */
+
+<span class="fc" id="L11">public class GradeCalculator {</span>
+
+    /**
+     * Menghitung IPK (Indeks Prestasi Kumulatif) mahasiswa
+     * Formula: Total (Grade Point × SKS) / Total SKS
+     *
+     * @param grades List of CourseGrade yang berisi nilai mata kuliah
+     * @return IPK dengan pembulatan 2 desimal
+     * @throws IllegalArgumentException jika grade point invalid (&lt; 0 atau &gt; 4.0)
+     */
+    public double calculateGPA(List&lt;CourseGrade&gt; grades) {
+<span class="fc bfc" id="L22" title="All 4 branches covered.">        if (grades == null || grades.isEmpty()) {</span>
+<span class="fc" id="L23">            return 0.0;</span>
+        }
+
+<span class="fc" id="L26">        double totalPoints = 0.0;</span>
+<span class="fc" id="L27">        int totalCredits = 0;</span>
+
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        for (CourseGrade grade : grades) {</span>
+<span class="fc bfc" id="L30" title="All 4 branches covered.">            if (grade.getGradePoint() &lt; 0 || grade.getGradePoint() &gt; 4.0) {</span>
+<span class="fc" id="L31">                throw new IllegalArgumentException(&quot;Invalid grade point: &quot; + grade.getGradePoint());</span>
+            }
+<span class="fc" id="L33">            totalPoints += grade.getGradePoint() * grade.getCredits();</span>
+<span class="fc" id="L34">            totalCredits += grade.getCredits();</span>
+<span class="fc" id="L35">        }</span>
+
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        if (totalCredits == 0) {</span>
+<span class="fc" id="L38">            return 0.0;</span>
+        }
+
+        // Pembulatan ke 2 desimal
+<span class="fc" id="L42">        return Math.round((totalPoints / totalCredits) * 100.0) / 100.0;</span>
+    }
+
+    /**
+     * Menentukan status akademik mahasiswa berdasarkan IPK dan semester
+     *
+     * Aturan:
+     * - Semester 1-2: IPK &gt;= 2.0 → ACTIVE, IPK &lt; 2.0 → PROBATION
+     * - Semester 3-4: IPK &gt;= 2.25 → ACTIVE, IPK 2.0-2.24 → PROBATION, IPK &lt; 2.0 → SUSPENDED
+     * - Semester 5+: IPK &gt;= 2.5 → ACTIVE, IPK 2.0-2.49 → PROBATION, IPK &lt; 2.0 → SUSPENDED
+     *
+     * @param gpa IPK mahasiswa (0.0 - 4.0)
+     * @param semester Semester mahasiswa (harus &gt; 0)
+     * @return Status akademik: ACTIVE, PROBATION, atau SUSPENDED
+     * @throws IllegalArgumentException jika gpa atau semester invalid
+     */
+    public String determineAcademicStatus(double gpa, int semester) {
+<span class="fc bfc" id="L59" title="All 4 branches covered.">        if (gpa &lt; 0 || gpa &gt; 4.0) {</span>
+<span class="fc" id="L60">            throw new IllegalArgumentException(&quot;GPA must be between 0 and 4.0&quot;);</span>
+        }
+
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        if (semester &lt; 1) {</span>
+<span class="fc" id="L64">            throw new IllegalArgumentException(&quot;Semester must be positive&quot;);</span>
+        }
+
+        // Semester 1-2: minimal IPK 2.0
+<span class="fc bfc" id="L68" title="All 2 branches covered.">        if (semester &lt;= 2) {</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">            return gpa &gt;= 2.0 ? &quot;ACTIVE&quot; : &quot;PROBATION&quot;;</span>
+        }
+
+        // Semester 3-4: minimal IPK 2.25
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        if (semester &lt;= 4) {</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">            if (gpa &gt;= 2.25) return &quot;ACTIVE&quot;;</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">            if (gpa &gt;= 2.0) return &quot;PROBATION&quot;;</span>
+<span class="fc" id="L76">            return &quot;SUSPENDED&quot;;</span>
+        }
+
+        // Semester 5+: minimal IPK 2.5
+<span class="fc bfc" id="L80" title="All 2 branches covered.">        if (gpa &gt;= 2.5) return &quot;ACTIVE&quot;;</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">        if (gpa &gt;= 2.0) return &quot;PROBATION&quot;;</span>
+<span class="fc" id="L82">        return &quot;SUSPENDED&quot;;</span>
+    }
+
+    /**
+     * Menghitung jumlah SKS maksimal yang boleh diambil mahasiswa
+     * berdasarkan IPK
+     *
+     * Aturan:
+     * - IPK &gt;= 3.0: maksimal 24 SKS
+     * - IPK 2.5-2.99: maksimal 21 SKS
+     * - IPK 2.0-2.49: maksimal 18 SKS
+     * - IPK &lt; 2.0: maksimal 15 SKS
+     *
+     * @param gpa IPK mahasiswa (0.0 - 4.0)
+     * @return Jumlah SKS maksimal yang boleh diambil
+     * @throws IllegalArgumentException jika gpa invalid
+     */
+    public int calculateMaxCredits(double gpa) {
+<span class="fc bfc" id="L100" title="All 4 branches covered.">        if (gpa &lt; 0 || gpa &gt; 4.0) {</span>
+<span class="fc" id="L101">            throw new IllegalArgumentException(&quot;GPA must be between 0 and 4.0&quot;);</span>
+        }
+
+<span class="fc bfc" id="L104" title="All 2 branches covered.">        if (gpa &gt;= 3.0) return 24;</span>
+<span class="fc bfc" id="L105" title="All 2 branches covered.">        if (gpa &gt;= 2.5) return 21;</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">        if (gpa &gt;= 2.0) return 18;</span>
+<span class="fc" id="L107">        return 15;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

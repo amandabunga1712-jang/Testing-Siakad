@@ -1,0 +1,26 @@
+# ========== IntelliJ IDEA ==========
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ========== Build & Output Folders ==========
+build/
+out/
+.gradle/
+
+# ========== Maven/Gradle Wrapper ==========
+!gradlew
+!gradlew.bat
+!gradle/wrapper/gradle-wrapper.jar
+
+# ========== Logs & Temp Files ==========
+*.log
+*.tmp
+
+# ========== OS-specific ==========
+.DS_Store
+Thumbs.db
+
+# ========== Optional: Node/VSCode (if ever used) ==========
+.vscode/
